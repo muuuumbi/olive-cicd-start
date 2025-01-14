@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+#pod의 volume name과 일치해야 함 
+  name: mysql-pv-claim
+  labels:
+    app: mysql
+spec:
+  storageClassName: gp2-persistent
+  resources:
+    requests:
+      storage: 40Gi
+  accessModes:
+    - ReadWriteOnce
